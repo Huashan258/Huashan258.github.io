@@ -7,7 +7,8 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
-github_username:  jekyll
+github_username: Huashan258
+bilibili_url: https://space.bilibili.com/29663423  # 替换成你的B站ID
 
 # Build settings
 theme: just-the-docs
