@@ -14,3 +14,12 @@ bilibili_url: https://space.bilibili.com/29663423  # 替换成你的B站ID
 theme: just-the-docs
 plugins:
   - jekyll-feed
+
+aux_links:
+  "GitHub":
+    - "https://github.com/Huashan258"
+  "哔哩哔哩":
+    - "https://space.bilibili.com/29663423"
+
+# 显示导航链接的图标
+aux_links_new_tab: true

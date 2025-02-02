@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap');
+
+:root {
+  --body-font-family: "Noto Sans SC", -apple-system, "Source Han Sans SC", "Source Han Sans CN", "思源黑体 CN", sans-serif;
+  --mono-font-family: "SFMono-Regular", "Source Code Pro", Menlo, Consolas, monospace;
+}
+
+body {
+  font-family: var(--body-font-family);
+  font-weight: 500;  // 增加全局字重
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--body-font-family);
+  font-weight: 700;  // 标题使用更粗的字重
+}
+
+.site-title {
+  font-family: var(--body-font-family);
+  font-weight: 700;  // 网站标题加粗
+}
+
+.main-content {
+  font-weight: 500;  // 主要内容区域加粗
+}
+
+a {
+  font-weight: 500;  // 链接文字加粗
+}
