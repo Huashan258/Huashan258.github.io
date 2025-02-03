@@ -335,6 +335,7 @@ app.config['LOGGER_NAME'] = None
 - 配置特定的日志处理策略
 
 ## 21. LOGGER_HANDLER_POLICY
+
 ```python
 app.config['LOGGER_HANDLER_POLICY'] = 'always'
 ```
@@ -343,8 +344,11 @@ app.config['LOGGER_HANDLER_POLICY'] = 'always'
 - 'always'：始终添加处理器
 - 'never'：从不添加处理器
 - 'production'：仅在生产环境添加处理器
+
 ## **本条之后的内容可以完全不需要阅读**
+
 ### 示例
+
 ```python
 import logging
 from flask import Flask
@@ -379,14 +383,14 @@ def setup_logger(app):
         # 不添加处理器，可能使用其他配置方式
         pass
 
-# 创建应用示例
+    # 创建应用示例
 app = Flask(__name__)
 app.config.update(
     LOGGER_NAME='my_application',
     LOGGER_HANDLER_POLICY='production'
 )
 
-# 设置日志系统
+    # 设置日志系统
 setup_logger(app)
 
 @app.route('/')
