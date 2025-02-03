@@ -4,15 +4,29 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+# 关于这名人类观察者
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+> "在泰拉大陆的某个角落，一位独臂的记录者正在书写着她的故事..."
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+## 综合体检测试 🎭
 
+- 【物理强度】普通
+- 【战场机动】缺陷
+- 【生理耐受】普通
+- 【战术规划】■■
+- 【战斗技巧】缺陷
+- 【源石技艺适应性】■■
 
-[jekyll-organization]: https://github.com/jekyll
+## 技能树 🌲
+- 整合运动防控 精通
+- 源石技艺研究 进行中
+
+## 为什么建立这个站点？
+
+这里是我的数字花园，记录着我在技术世界的探索和发现。同时，这也是一个可以暂时躲避整合运动的安全屋，欢迎各位博士一同交流。
+
+*P.S. 如果你发现了任何问题或有任何建议，随时欢迎通过上述方式联系我。* 😊
+
+---
+
+*"让我们在这个数字世界中留下我们的足迹。"*

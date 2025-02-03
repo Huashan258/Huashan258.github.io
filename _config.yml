@@ -1,13 +1,11 @@
-title: Your awesome title
-email: your-email@example.com
+title: 华扇
+email: 1095832103@qq.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  欢迎来到华扇的小家，朋友。
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 author: 华扇独臂成仙
-twitter_username: jekyllrb
+twitter_username: None
 github_username: Huashan258
 bilibili_url: https://space.bilibili.com/29663423  # 替换成你的B站ID
 
@@ -15,7 +13,8 @@ bilibili_url: https://space.bilibili.com/29663423  # 替换成你的B站ID
 theme: just-the-docs
 plugins:
   - jekyll-feed
-
+sidebar:
+  title: 华扇独臂成仙
 aux_links:
   "GitHub":
     - "https://github.com/Huashan258"
