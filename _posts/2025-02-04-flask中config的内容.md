@@ -136,7 +136,9 @@ def handle_error(error):
         log_error(error, user_agent)
     return "An error occurred", 500
 ```
+
 一般不推荐你使用这个东西，如果你实在想用……
+
 ```python
 class Config:
     # 基础配置
