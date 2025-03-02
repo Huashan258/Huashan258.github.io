@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "flask中config的内容"
-date:   2012-02-04 03:00:00 +0800
+date:   2025-02-04 03:00:00 +0800
 categories: B站弹幕姬
 ---
 # **config包含什么**
