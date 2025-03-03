@@ -24,6 +24,6 @@ aux_links:
 # 显示导航链接的图标
 aux_links_new_tab: true
 markdown: kramdown
-       kramdown:
-         syntax_highlighter: rouge
-         input: GFM # 确保使用GitHub Flavored Markdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
