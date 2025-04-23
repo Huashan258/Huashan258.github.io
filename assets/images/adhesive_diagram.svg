@@ -1,0 +1,38 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background grid (optional, can be removed) -->
+  <rect width="800" height="500" fill="white"/>
+  
+  <!-- Bonded material (light blue rectangle) -->
+  <rect x="160" y="230" width="480" height="30" fill="#add8e6" stroke="black" stroke-width="1"/>
+  
+  <!-- Glue drop (green ellipse) -->
+  <ellipse cx="400" cy="160" rx="200" ry="70" fill="#90ee90" stroke="black" stroke-width="1"/>
+  
+  <!-- Physical adhesion area (red outline) -->
+  <ellipse cx="400" cy="230" rx="200" ry="10" fill="none" stroke="red" stroke-width="2"/>
+  
+  <!-- Text at the bottom -->
+  <g font-family="Arial, sans-serif" font-size="18" text-anchor="middle">
+    <!-- Bonded material label -->
+    <text x="200" y="420">被胶接材料</text>
+    <rect x="140" y="400" width="120" height="30" fill="none" stroke="black" stroke-width="1" rx="5" ry="5"/>
+    <line x1="200" y1="400" x2="200" y2="320" stroke="black" stroke-width="1"/>
+    <line x1="160" y1="320" x2="200" y2="320" stroke="black" stroke-width="1"/>
+    <line x1="160" y1="320" x2="180" y2="300" stroke="black" stroke-width="1"/>
+    <line x1="180" y1="300" x2="180" y2="260" stroke="black" stroke-width="1"/>
+    
+    <!-- Glue drop label -->
+    <text x="400" y="420">胶液滴</text>
+    <rect x="340" y="400" width="120" height="30" fill="none" stroke="#ff69b4" stroke-width="1" rx="5" ry="5"/>
+    <line x1="400" y1="400" x2="400" y2="320" stroke="#ff69b4" stroke-width="1"/>
+    <line x1="400" y1="320" x2="450" y2="250" stroke="#ff69b4" stroke-width="1"/>
+    <line x1="450" y1="250" x2="550" y2="130" stroke="#ff69b4" stroke-width="1"/>
+    
+    <!-- Physical adhesion area label -->
+    <text x="600" y="420">物理吸附区域</text>
+    <rect x="540" y="400" width="120" height="30" fill="none" stroke="red" stroke-width="1" rx="5" ry="5"/>
+    <line x1="600" y1="400" x2="600" y2="320" stroke="red" stroke-width="1"/>
+    <line x1="600" y1="320" x2="550" y2="250" stroke="red" stroke-width="1"/>
+    <line x1="550" y1="250" x2="500" y2="230" stroke="red" stroke-width="1"/>
+  </g>
+</svg>
