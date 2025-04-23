@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350">
+  <!-- 第一个反应: R-OH + R'-NCO → R-O-C-NH-R' -->
+  <text x="80" y="80" font-family="Arial" font-size="18">R-OH + R'-NCO</text>
+  <line x1="220" y1="80" x2="320" y2="80" stroke="black" stroke-width="2"/>
+  <polygon points="320,80 310,75 310,85" fill="black"/>
+  <text x="340" y="80" font-family="Arial" font-size="18">R-O-C-NH-R'</text>
+  
+  <!-- 第一个反应的羰基双键 -->
+  <text x="380" y="50" font-family="Arial" font-size="18">O</text>
+  <line x1="385" y1="55" x2="385" y2="67" stroke="black" stroke-width="1.5"/>
+  <line x1="388" y1="55" x2="388" y2="67" stroke="black" stroke-width="1.5"/>
+  
+  <!-- 第二个反应: R-OH + 环氧乙烷 → R-O-CH₂-CH-R' -->
+  <text x="50" y="180" font-family="Arial" font-size="18">R-OH + R-</text>
+  
+  <!-- 环氧乙烷结构 -->
+  <text x="140" y="180" font-family="Arial" font-size="18">CH—</text>
+  <text x="185" y="180" font-family="Arial" font-size="18">CH₂</text>
+  <line x1="150" y1="190" x2="165" y2="215" stroke="black" stroke-width="1.5"/>
+  <line x1="190" y1="190" x2="175" y2="215" stroke="black" stroke-width="1.5"/>
+  <text x="165" y="225" font-family="Arial" font-size="18">O</text>
+  
+  <!-- 第二个反应箭头 -->
+  <line x1="240" y1="180" x2="340" y2="180" stroke="black" stroke-width="2"/>
+  <polygon points="340,180 330,175 330,185" fill="black"/>
+  
+  <!-- 第二个反应产物 -->
+  <text x="360" y="180" font-family="Arial" font-size="18">R-O-CH₂-CH-R'</text>
+  <text x="440" y="210" font-family="Arial" font-size="18">OH</text>
+  <line x1="445" y1="180" x2="445" y2="195" stroke="black" stroke-width="1.5"/>
+  
+  <!-- 第三个反应: R-OH + R'-CH₂-OH → R-O-CH₂-R' -->
+  <text x="50" y="300" font-family="Arial" font-size="18">R-OH + R'-CH₂-OH</text>
+  
+  <!-- 第三个反应箭头 -->
+  <line x1="230" y1="300" x2="330" y2="300" stroke="black" stroke-width="2"/>
+  <polygon points="330,300 320,295 320,305" fill="black"/>
+  
+  <!-- 第三个反应产物 -->
+  <text x="350" y="300" font-family="Arial" font-size="18">R-O-CH₂-R'</text>
+</svg>
