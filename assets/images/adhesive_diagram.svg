@@ -1,6 +1,6 @@
 <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
   <!-- Background grid (optional, can be removed) -->
-  <rect width="800" height="500" fill="white"/>
+  
   
   <!-- Bonded material (light blue rectangle) -->
   <rect x="160" y="230" width="480" height="30" fill="#add8e6" stroke="black" stroke-width="1"/>
