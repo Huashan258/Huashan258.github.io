@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240">
+  <!-- No background fill (transparent) -->
+  
+  <!-- Red top rectangle -->
+  <rect x="75" y="10" width="650" height="70" rx="10" ry="10" fill="#ff0000" />
+  
+  <!-- Magenta border line (width tripled) -->
+  <rect x="75" y="80" width="650" height="15" fill="#ff00ff" />
+  
+  <!-- Light blue/teal bottom rectangle -->
+  <rect x="25" y="95" width="750" height="40" rx="10" ry="10" fill="#b0d8e0" />
+  
+  <!-- Legend at bottom -->
+  <!-- Color block for adhesive -->
+  <rect x="220" y="175" width="20" height="20" fill="#ff0000" />
+  <text x="250" y="190" font-family="Arial, sans-serif" font-size="14" fill="black">胶粘剂</text>
+  
+  <!-- Color block for transition layer -->
+  <rect x="350" y="175" width="20" height="20" fill="#ff00ff" />
+  <text x="380" y="190" font-family="Arial, sans-serif" font-size="14" fill="black">过渡层</text>
+  
+  <!-- Color block for adhered material -->
+  <rect x="480" y="175" width="20" height="20" fill="#b0d8e0" />
+  <text x="510" y="190" font-family="Arial, sans-serif" font-size="14" fill="black">被胶材料</text>
+</svg>
