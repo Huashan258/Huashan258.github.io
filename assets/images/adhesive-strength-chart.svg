@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 500 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background and border -->
+  <rect x="50" y="50" width="400" height="400" fill="white" stroke="#cccccc" stroke-width="2" />
+  
+  <!-- Grid lines -->
+  <g stroke="#eeeeee" stroke-width="1">
+    <!-- Vertical grid lines -->
+    <line x1="50" y1="50" x2="50" y2="450" />
+    <line x1="130" y1="50" x2="130" y2="450" />
+    <line x1="210" y1="50" x2="210" y2="450" />
+    <line x1="290" y1="50" x2="290" y2="450" />
+    <line x1="370" y1="50" x2="370" y2="450" />
+    <line x1="450" y1="50" x2="450" y2="450" />
+    
+    <!-- Horizontal grid lines -->
+    <line x1="50" y1="50" x2="450" y2="50" />
+    <line x1="50" y1="130" x2="450" y2="130" />
+    <line x1="50" y1="210" x2="450" y2="210" />
+    <line x1="50" y1="290" x2="450" y2="290" />
+    <line x1="50" y1="370" x2="450" y2="370" />
+    <line x1="50" y1="450" x2="450" y2="450" />
+  </g>
+  
+  <!-- Axes -->
+  <g stroke="black" stroke-width="2">
+    <line x1="50" y1="450" x2="450" y2="450" /> <!-- x-axis -->
+    <line x1="50" y1="50" x2="50" y2="450" /> <!-- y-axis -->
+  </g>
+  
+  <!-- X-axis labels -->
+  <g font-family="Arial" font-size="12" text-anchor="middle">
+    <text x="50" y="470">0</text>
+    <text x="130" y="470">30</text>
+    <text x="210" y="470">60</text>
+    <text x="290" y="470">90</text>
+    <text x="370" y="470">120</text>
+    <text x="450" y="470">150</text>
+    <text x="250" y="490">t (min)</text>
+  </g>
+  
+  <!-- Y-axis labels -->
+  <g font-family="Arial" font-size="12" text-anchor="end">
+    <text x="45" y="450">0</text>
+    <text x="45" y="370">10</text>
+    <text x="45" y="290">20</text>
+    <text x="45" y="210">30</text>
+    <text x="45" y="130">40</text>
+    <text x="45" y="50">50</text>
+  </g>
+  
+  <!-- Y-axis title -->
+  <g font-family="SimSun, Arial" font-size="12" text-anchor="middle">
+    <text transform="rotate(-90,25,250)" x="25" y="250">拉伸胶接强度 (kgf/cm²)</text>
+  </g>
+  
+  <!-- Data points -->
+  <g fill="black">
+    <!-- t=0 data points -->
+    <circle cx="50" cy="385" r="4" />
+    <circle cx="50" cy="415" r="4" />
+    <circle cx="50" cy="435" r="4" />
+    <circle cx="50" cy="365" r="4" />
+    <circle cx="50" cy="350" r="4" />
+    
+    <!-- t=15 data points -->
+    <circle cx="90" cy="365" r="4" />
+    <circle cx="90" cy="340" r="4" />
+    <circle cx="90" cy="355" r="4" />
+    
+    <!-- t=30 data points -->
+    <circle cx="130" cy="340" r="4" />
+    <circle cx="130" cy="320" r="4" />
+    
+    <!-- t=45 data points -->
+    <circle cx="170" cy="345" r="4" />
+    <circle cx="170" cy="310" r="4" />
+    <circle cx="170" cy="270" r="4" />
+    <circle cx="170" cy="240" r="4" />
+    <circle cx="170" cy="225" r="4" />
+    
+    <!-- t=60 data points -->
+    <circle cx="210" cy="160" r="4" />
+    <circle cx="210" cy="125" r="4" />
+    <circle cx="210" cy="145" r="4" />
+    <circle cx="210" cy="170" r="4" />
+    <circle cx="210" cy="90" r="4" />
+    
+    <!-- t=75 data points -->
+    <circle cx="250" cy="125" r="4" />
+    <circle cx="250" cy="140" r="4" />
+    <circle cx="250" cy="110" r="4" />
+    <circle cx="250" cy="155" r="4" />
+    <circle cx="250" cy="170" r="4" />
+    
+    <!-- t=90 data points -->
+    <circle cx="290" cy="220" r="4" />
+    <circle cx="290" cy="230" r="4" />
+    <circle cx="290" cy="200" r="4" />
+    <circle cx="290" cy="250" r="4" />
+    
+    <!-- t=105 data points -->
+    <circle cx="330" cy="270" r="4" />
+    <circle cx="330" cy="240" r="4" />
+    <circle cx="330" cy="310" r="4" />
+    <circle cx="330" cy="280" r="4" />
+    
+    <!-- t=120 data points -->
+    <circle cx="370" cy="290" r="4" />
+    <circle cx="370" cy="315" r="4" />
+    <circle cx="370" cy="350" r="4" />
+    <circle cx="370" cy="330" r="4" />
+    <circle cx="370" cy="375" r="4" />
+  </g>
+  
+  <!-- Red oval highlight -->
+  <ellipse cx="190" cy="200" rx="25" ry="150" fill="none" stroke="red" stroke-width="2" />
+  <!-- Caption -->
+  <text x="250" y="515" font-family="SimSun, Arial" font-size="14" text-anchor="middle">环氧树脂加入固化剂后的时间与拉伸胶接强度的关系</text>
+</svg>
