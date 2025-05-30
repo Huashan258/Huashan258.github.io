@@ -48,7 +48,7 @@ This first formation of the band recorded a self-titled demo in 2004, together w
  
  In 2005, Mejía and Contreras would also leave the band, with Alberto Morales taking over as bassist. After this lineup change, the band decided that their refreshed musical style required a new name, so it became Acrania.
 
- ### Unbreakable Fury and European debut (2006–2011)
+###  Unbreakable Fury and European debut (2006–2011)
 
  In 2007, after a year of writing songs and getting rid of the Necrofilia music, the band entered the studio for the recording of their first EP, In Peaceful Chaos. The self-produced EP, which consisted on four tracks, was recorded from April to June at Mexico City, and released on September.
 
@@ -68,7 +68,7 @@ Acrania's second album, An Uncertain Collision, was recorded during June and Jul
  
  This second album led Acrania to perform as opening act for Death's "Death to All" tour in Mexico. On July, An Uncertain Collision was recognized as Best Progressive Metal Album at Kalani Metal Awards. Later that year, Carreón and Gómez left the band.
 
- ## Fearless (2014–present)
+### Fearless (2014–present)
 
  With new guitarist Caesar Augustus on board, Acrania went back into the studio for the recording of their third album, Fearless, this time with the support of the National Fund for Culture and Arts (FONCA). 
  
