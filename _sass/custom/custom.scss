@@ -3,11 +3,16 @@
 :root {
   --body-font-family: "Noto Sans SC", -apple-system, "Source Han Sans SC", "Source Han Sans CN", "思源黑体 CN", sans-serif;
   --mono-font-family: "SFMono-Regular", "Source Code Pro", Menlo, Consolas, monospace;
+
+  --base-font-size: 24px;
+  --title-font-size: 36px;
+  --content-font-size: 22.5px;
 }
 
 body {
   font-family: var(--body-font-family);
   font-weight: 500;  // 增加全局字重
+  font-size: var(--base-font-size); /* 基础字体大小 */
   background-image: url('../../../../assets/images/background.jpg');  // 更改为你的图片路径
   background-attachment: fixed;  // 固定背景，不随滚动
   background-size: cover;  // 覆盖整个视窗
@@ -18,7 +23,12 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--body-font-family);
   font-weight: 700;  // 标题使用更粗的字重
+  font-size: var(--title-font-size); /* 标题字体大小（可单独为h1-h6设置不同大小） */
 }
+
+h1 { font-size: 48px; }
+h2 { font-size: 42px; }
+h3 { font-size: 36px; }
 
 .site-title {
   font-family: var(--body-font-family);
@@ -28,25 +38,29 @@ h1, h2, h3, h4, h5, h6 {
 
 .main-content {
   font-weight: 500;  // 主要内容区域加粗
+  font-size: var(--content-font-size); /* 主要内容字体大小 */
 }
 
 .main {
-  background-color: rgba(255, 255, 255, 0.85);  // 白色背景，95%不透明度
+  background-color: rgba(255, 255, 255, 0.95);  // 白色背景，95%不透明度
 }
 
 .side-bar {
-  background-color: rgba(255, 255, 255, 0.55);  // 侧边栏也添加半透明背景
+  background-color: rgba(255, 255, 255, 0.35);  // 侧边栏也添加半透明背景
 }
 
 a {
   font-weight: 500;  // 链接文字加粗
+  font-size: 22.5px;
 }
 
 .math {
   display: block;
   margin: 1em 0;
   text-align: center;
+  font-size: 22.5px;
 }
 .math-inline {
   display: inline;
+  font-size: inherit; /* 继承父元素字体大小 */
 }
