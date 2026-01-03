@@ -4,9 +4,9 @@
   --body-font-family: "Noto Sans SC", -apple-system, "Source Han Sans SC", "Source Han Sans CN", "思源黑体 CN", sans-serif;
   --mono-font-family: "SFMono-Regular", "Source Code Pro", Menlo, Consolas, monospace;
 
-  --base-font-size: 24px;
+  --base-font-size: 30px;
   --title-font-size: 36px;
-  --content-font-size: 22.5px;
+  --content-font-size: 20px;
 }
 
 body {
@@ -29,6 +29,9 @@ h1, h2, h3, h4, h5, h6 {
 h1 { font-size: 48px; }
 h2 { font-size: 42px; }
 h3 { font-size: 36px; }
+h4 { font-size: 32px; }
+h5 { font-size: 28px; }
+h6 { font-size: 25px; }
 
 .site-title {
   font-family: var(--body-font-family);
