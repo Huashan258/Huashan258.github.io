@@ -5,7 +5,7 @@
 }(typeof globalThis !== 'undefined' ? globalThis : this, function () {
   'use strict';
   function normalize(value) {
-    return String(value || '').normalize('NFKC').toLowerCase().replace(/黏/g, '粘').replace(/\s+/g, ' ').trim();
+    return String(value || '').normalize('NFKC').toLowerCase().replace(/粘/g, '黏').replace(/\s+/g, ' ').trim();
   }
   function prepare(documents) {
     return documents.filter(function (doc) {

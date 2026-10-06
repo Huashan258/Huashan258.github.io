@@ -13,7 +13,7 @@
   <!-- Legend at bottom -->
   <!-- Color block for adhesive -->
   <rect x="220" y="175" width="20" height="20" fill="#ff0000" />
-  <text x="250" y="190" font-family="Arial, sans-serif" font-size="14" fill="black">胶粘剂</text>
+  <text x="250" y="190" font-family="Arial, sans-serif" font-size="14" fill="black">胶黏剂</text>
   
   <!-- Color block for transition layer -->
   <rect x="350" y="175" width="20" height="20" fill="#ff00ff" />

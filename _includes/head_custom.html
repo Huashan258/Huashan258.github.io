@@ -1,3 +1,7 @@
+{% if page.redirect_to %}
+  <meta name="robots" content="noindex, follow">
+  <meta http-equiv="refresh" content="0;url={{ page.redirect_to | relative_url | escape }}">
+{% endif %}
 {% if page.math %}
   <link rel="stylesheet" href="{{ '/assets/vendor/katex/katex.min.css' | relative_url }}">
   <script defer src="{{ '/assets/vendor/katex/katex.min.js' | relative_url }}"></script>

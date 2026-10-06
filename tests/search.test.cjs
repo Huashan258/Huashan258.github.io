@@ -31,6 +31,19 @@ test('English, full-width characters and 黏/粘 are normalized', () => {
   assert(titles('FLASK').includes('flask中config的内容'));
   assert.deepEqual(titles('ｆｌａｓｋ'), titles('flask'));
   assert.deepEqual(titles('胶黏剂'), titles('胶粘剂'));
+  assert.equal(engine.normalize('胶黏剂'), '胶黏剂');
+});
+test('adhesive articles use 胶黏剂 in titles, bodies, categories and canonical URLs', () => {
+  const adhesives = documents.filter(doc => doc.categories.includes('胶黏剂'));
+  assert.equal(adhesives.length, 20);
+  assert(adhesives.some(doc => doc.title === '胶黏剂概论'));
+  for (const doc of documents) {
+    assert(!JSON.stringify(doc).includes('胶粘剂'), 'Old terminology in ' + doc.title);
+  }
+  for (const doc of adhesives) {
+    assert(decodeURI(doc.url).startsWith('/胶黏剂/'));
+    assert(!decodeURI(doc.url).includes('胶粘剂'));
+  }
 });
 test('blank and missing keywords return no results', () => {
   assert.deepEqual(titles('  '), []);

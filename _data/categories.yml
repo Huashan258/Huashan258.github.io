@@ -1,6 +1,6 @@
 # 分类名称须与文章的 categories 一致。
 # image 留空时保持文字卡片；填写本地图片路径后显示封面。
-# 例如胶粘剂封面：image: "/assets/images/covers/adhesives.webp"
+# 例如胶黏剂封面：image: "/assets/images/covers/adhesives.webp"
 # 可选 description 用于介绍分类；新分类即使未写在这里也会自动生成。
 
 木材干燥学:
@@ -12,6 +12,8 @@
 胶黏剂:
   image: "/assets/images/covers/jiaonianji.png"
   description: "从胶黏剂基础到木材工业中的应用。"
+  # 仅用于兼容旧分类链接，页面统一显示上面的名称。
+  aliases: ["胶粘剂"]
 液压与气压传动:
   image: "/assets/images/covers/yeya.png"
   description: "这个东西的坑真的填的完吗？。"

@@ -29,10 +29,14 @@ class Page(HTMLParser):
         self.images = []
         self.scripts = []
         self.styles = []
+        self.visible_text = []
+        self.skip_text = False
         self.h1 = 0
         self.lang = None
         self.canonical = None
         self.locale = None
+        self.redirect = None
+        self.robots = ""
         self.formulas = []
         self.cards = 0
         self.feed_content = content
@@ -40,6 +44,8 @@ class Page(HTMLParser):
 
     def handle_starttag(self, tag, attributes):
         attrs = dict(attributes)
+        if tag in ("script", "style"):
+            self.skip_text = True
         if "id" in attrs:
             self.ids.append(attrs["id"])
         if tag == "html":
@@ -56,6 +62,12 @@ class Page(HTMLParser):
             self.formulas.append(attrs["data-math"])
         if tag == "meta" and attrs.get("property") == "og:locale":
             self.locale = attrs.get("content")
+        if tag == "meta" and attrs.get("name") == "robots":
+            self.robots = attrs.get("content", "")
+        if tag == "meta" and attrs.get("http-equiv", "").lower() == "refresh":
+            match = re.fullmatch(r"0;url=(/.+)", attrs.get("content", ""))
+            self.redirect = match.group(1) if match else None
+            check(self.redirect is not None, "Redirect must refresh immediately to a local URL")
         if tag == "link":
             rel = attrs.get("rel", "")
             if rel == "canonical":
@@ -64,6 +76,14 @@ class Page(HTMLParser):
                 self.styles.append(attrs.get("href", ""))
         if "article-card" in attrs.get("class", "").split():
             self.cards += 1
+
+    def handle_endtag(self, tag):
+        if tag in ("script", "style"):
+            self.skip_text = False
+
+    def handle_data(self, data):
+        if not self.skip_text:
+            self.visible_text.append(data)
 
 
 def target_path(url):
@@ -81,8 +101,15 @@ for file in SITE.rglob("*.html"):
     check(page.lang == "zh-CN", f"Wrong language: {relative}")
     check(page.h1 == 1, f"Expected one h1: {relative} ({page.h1})")
     check(page.canonical and page.canonical.startswith(ORIGIN), f"Missing absolute canonical: {relative}")
-    check(page.canonical and unquote(urlsplit(page.canonical).path) == url, f"Canonical path changed: {relative}")
+    canonical_path = unquote(urlsplit(page.canonical or "").path)
+    if page.redirect:
+        check(page.redirect.startswith("/") and not page.redirect.startswith("//"), f"External redirect: {relative}")
+        check(canonical_path == unquote(urlsplit(page.redirect).path), f"Redirect canonical is wrong: {relative}")
+        check("noindex" in page.robots, f"Redirect must stay out of search engines: {relative}")
+    else:
+        check(canonical_path == url, f"Canonical path changed: {relative}")
     check(page.locale == "zh_CN", f"Wrong Open Graph locale: {relative}")
+    check("胶粘剂" not in "".join(page.visible_text), f"Old terminology remains on page: {relative}")
     check(len(page.ids) == len(set(page.ids)), f"Duplicate heading IDs: {relative}")
     for image in page.images:
         check(image.get("width") and image.get("height"), f"Missing image size: {relative} {image.get('src')}")
@@ -95,6 +122,9 @@ for file in SITE.rglob("*.html"):
 
 for file, page in pages.items():
     relative = file.relative_to(SITE).as_posix()
+    if page.redirect:
+        target = pages.get(target_path(page.redirect).resolve())
+        check(target is not None and target.redirect is None, f"Redirect target missing or chained: {relative}")
     base = ORIGIN + "/" + relative
     for link in page.links + [image.get("src", "") for image in page.images]:
         if not link or link.startswith(("mailto:", "tel:")):
@@ -129,6 +159,7 @@ check(len({item["url"] for item in documents}) == len(documents), "Duplicate sea
 check(all(item["content"] for item in documents), "Empty article content in search")
 for item in documents:
     check(target_path(item["url"]).is_file(), f"Search link missing: {item['url']}")
+    check("胶粘剂" not in item["title"] + item["content"] + " ".join(item["categories"]), f"Old terminology remains in search: {item['title']}")
 check(pages[(SITE / "index.html").resolve()].cards == 8, "Homepage should show eight recent posts")
 check("test1" not in {item["title"] for item in documents}, "Test post leaked into search")
 
@@ -139,10 +170,17 @@ check(all(url.startswith(ORIGIN) for url in locations), "Sitemap URLs must be ab
 for item in documents:
     check(ORIGIN + unquote(item["url"]) in locations, f"Article absent from sitemap: {item['title']}")
 for file, page in pages.items():
+    if page.redirect:
+        relative = file.relative_to(SITE).as_posix()
+        url = "/" + (relative[:-10] if relative.endswith("index.html") else relative)
+        check(ORIGIN + url not in locations, f"Redirect must stay out of sitemap: {url}")
     if file.parent.parent == (SITE / "categories").resolve():
         check(unquote(page.canonical) in locations, f"Category absent from sitemap: {file.parent.name}")
 check("Sitemap: " + ORIGIN + "/sitemap.xml" in (SITE / "robots.txt").read_text(), "robots.txt is missing sitemap")
 check(not re.search(r"fonts\.googleapis\.com|background\.jpg", (SITE / "assets/css/site.css").read_text()), "Heavy background or remote font still in active CSS")
+for file in (SITE / "assets/images").rglob("*.svg"):
+    visible = "".join(ET.parse(file).getroot().itertext())
+    check("胶粘剂" not in visible, f"Old terminology remains in illustration: {file.name}")
 
 category_errors, category_count = verify_categories(SITE)
 errors.extend(category_errors)

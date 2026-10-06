@@ -46,9 +46,11 @@ module HuashanCategories
         url = "/categories/#{slug}/"
         description = options["description"].to_s.strip
         image = HuashanCategories.optional_image(site, options["image"])
+        aliases = Array(options["aliases"]).map { |value| value.to_s.strip }.reject { |value| value.empty? || value == name }.uniq
         entry = {
           "name" => name, "url" => url, "count" => posts.size,
           "description" => description, "image" => image,
+          "aliases" => aliases,
           "symbol" => group ? group["symbol"] : "记",
           "group_id" => group ? group["id"] : "other",
           "group_name" => group ? group["name"] : "其他记录",
@@ -60,6 +62,7 @@ module HuashanCategories
           "layout" => "category", "title" => name, "permalink" => url,
           "description" => description.empty? ? "#{name}分类的全部#{posts.size}篇文章，按发表时间从早到晚排列。" : description,
           "category_info" => entry, "category_posts" => posts,
+          "redirect_from" => aliases.map { |value| "/categories/#{Jekyll::Utils.slugify(value, :mode => 'default')}/" },
           "last_modified_at" => posts.last.date
         )
         page.data["image"] = image if image

@@ -1,5 +1,6 @@
 {% assign category = include.category %}
 <article class="category-card" id="category-{{ category.name | slugify: 'raw' | escape }}">
+  {% for alias in category.aliases %}<span id="category-{{ alias | slugify: 'raw' | escape }}" aria-hidden="true"></span>{% endfor %}
   <a class="category-card-link" href="{{ category.url | relative_url }}">
     {% if category.image %}<span class="category-cover" data-optional-cover><img src="{{ category.image | relative_url | escape }}" alt="" width="640" height="400" decoding="async" loading="lazy" data-fallback-image></span>{% endif %}
     <div class="category-card-body">

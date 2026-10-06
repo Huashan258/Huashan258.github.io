@@ -110,7 +110,7 @@
   </g>
   
   <!-- Adhesive label -->
-  <text x="200" y="175" font-family="SimSun, Arial" font-size="24" text-anchor="middle">胶粘剂</text>
+  <text x="200" y="175" font-family="SimSun, Arial" font-size="24" text-anchor="middle">胶黏剂</text>
   
   <!-- γLV symbol -->
   <text x="230" y="210" font-family="serif" font-size="18" font-style="italic">γLV</text>

@@ -1,0 +1,6 @@
+---
+layout: default
+---
+<h1>{{ page.title | escape }}</h1>
+<p>页面地址已更新，正在跳转。</p>
+<p><a href="{{ page.redirect_to | relative_url | escape }}">继续阅读 {{ page.title | escape }}</a></p>
