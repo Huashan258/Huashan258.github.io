@@ -2,7 +2,8 @@
 layout: default
 ---
 {% assign category = page.categories | first %}
-<nav class="breadcrumbs" aria-label="当前位置"><a href="{{ '/' | relative_url }}">首页</a><span aria-hidden="true">/</span>{% if page.listed == false %}<a href="{{ '/archives/' | relative_url }}">全部文章</a>{% else %}<a href="{{ '/categories/' | relative_url }}#category-{{ category | slugify: 'raw' | uri_escape }}">{{ category }}</a>{% endif %}<span aria-hidden="true">/</span><span>正文</span></nav>
+{% assign category_info = site.data.category_catalog[category] %}
+<nav class="breadcrumbs" aria-label="当前位置"><a href="{{ '/' | relative_url }}">首页</a><span aria-hidden="true">/</span>{% if page.listed == false or category_info == nil %}<a href="{{ '/archives/' | relative_url }}">全部文章</a>{% else %}<a href="{{ category_info.url | relative_url }}">{{ category }}</a>{% endif %}<span aria-hidden="true">/</span><span>正文</span></nav>
 <article>
   <header class="article-heading">
     <p class="eyebrow">{{ category }}</p>
@@ -27,5 +28,5 @@ layout: default
     </nav>
     <details class="series-list"><summary>{{ category }} · 系列索引（{{ series.size }} 篇）</summary><ol>{% for post in series %}<li>{% if post.url == page.url %}<span aria-current="page">{{ post.title }}</span>{% else %}<a href="{{ post.url | relative_url }}">{{ post.title }}</a>{% endif %}</li>{% endfor %}</ol></details>
   {% endif %}
-  <p class="article-return">{% if page.listed == false %}<a href="{{ '/archives/' | relative_url }}">← 返回全部文章</a>{% else %}<a href="{{ '/categories/' | relative_url }}#category-{{ category | slugify: 'raw' | uri_escape }}">← 返回 {{ category }}</a>{% endif %}<a href="#top">回到顶部 ↑</a></p>
+  <p class="article-return">{% if page.listed == false or category_info == nil %}<a href="{{ '/archives/' | relative_url }}">← 返回全部文章</a>{% else %}<a href="{{ category_info.url | relative_url }}">← 返回 {{ category }}</a>{% endif %}<a href="#top">回到顶部 ↑</a></p>
 </article>

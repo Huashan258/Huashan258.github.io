@@ -1,0 +1,13 @@
+{% assign category = include.category %}
+<article class="category-card" id="category-{{ category.name | slugify: 'raw' | escape }}">
+  <a class="category-card-link" href="{{ category.url | relative_url }}">
+    {% if category.image %}<span class="category-cover" data-optional-cover><img src="{{ category.image | relative_url | escape }}" alt="" width="640" height="400" decoding="async" loading="lazy" data-fallback-image></span>{% endif %}
+    <div class="category-card-body">
+      <span class="topic-symbol" aria-hidden="true">{{ category.symbol | escape }}</span>
+      <span class="topic-count">{{ category.count }} 篇文章</span>
+      <h3>{{ category.name | escape }}</h3>
+      {% if category.description != '' %}<span class="category-description">{{ category.description | escape }}</span>{% endif %}
+      <span class="category-card-action">查看全部文章 <span aria-hidden="true">→</span></span>
+    </div>
+  </a>
+</article>

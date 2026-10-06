@@ -10,6 +10,8 @@ author: 华扇独臂成仙
 email: 1095832103@qq.com
 github_username: Huashan258
 bilibili_url: https://space.bilibili.com/29663423
+# 头像图片放入 assets/images/，例如 /assets/images/avatar.jpg；留空保留“扇”。
+avatar: "/assets/images/avatar.jpg"
 
 theme: just-the-docs
 plugins:

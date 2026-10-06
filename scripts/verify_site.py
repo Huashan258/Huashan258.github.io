@@ -8,6 +8,7 @@ import json
 import re
 import sys
 import xml.etree.ElementTree as ET
+from verify_categories import verify as verify_categories
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / "_site"
@@ -137,11 +138,17 @@ locations = {unquote(node.text) for node in sitemap.findall(".//s:loc", ns)}
 check(all(url.startswith(ORIGIN) for url in locations), "Sitemap URLs must be absolute")
 for item in documents:
     check(ORIGIN + unquote(item["url"]) in locations, f"Article absent from sitemap: {item['title']}")
+for file, page in pages.items():
+    if file.parent.parent == (SITE / "categories").resolve():
+        check(unquote(page.canonical) in locations, f"Category absent from sitemap: {file.parent.name}")
 check("Sitemap: " + ORIGIN + "/sitemap.xml" in (SITE / "robots.txt").read_text(), "robots.txt is missing sitemap")
 check(not re.search(r"fonts\.googleapis\.com|background\.jpg", (SITE / "assets/css/site.css").read_text()), "Heavy background or remote font still in active CSS")
+
+category_errors, category_count = verify_categories(SITE)
+errors.extend(category_errors)
 
 if errors:
     for error in errors:
         print("FAIL:", error)
     sys.exit(1)
-print(f"PASS: {len(pages)} pages, {len(baseline)} preserved article URLs, {len(documents)} searchable articles, images, anchors and SEO.")
+print(f"PASS: {len(pages)} pages, {len(baseline)} preserved article URLs, {len(documents)} searchable articles, {category_count} chronological category pages, images, anchors and SEO.")

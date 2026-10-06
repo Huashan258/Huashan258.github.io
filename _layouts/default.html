@@ -18,13 +18,13 @@
   <div class="site-shell">
     <aside class="site-sidebar" id="site-navigation" aria-label="主导航">
       <a class="site-brand" href="{{ '/' | relative_url }}" aria-label="华扇首页">
-        <span class="brand-mark" aria-hidden="true">扇</span>
+        <span class="brand-mark" aria-hidden="true">扇{% if site.data.brand_avatar %}<img class="brand-avatar" src="{{ site.data.brand_avatar | relative_url | escape }}" alt="" width="44" height="44" decoding="async" loading="eager" data-fallback-image>{% endif %}</span>
         <span><strong>华扇</strong><small>学习笔记与生活记录</small></span>
       </a>
       <p class="sidebar-intro">在这个安静的角落，<br>记录学习，也收藏生活。</p>
       <nav aria-label="页面导航">
         <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}><span aria-hidden="true">⌂</span> 首页</a>
-        <a href="{{ '/categories/' | relative_url }}"{% if page.url == '/categories/' %} aria-current="page"{% endif %}><span aria-hidden="true">▦</span> 文章分类</a>
+        <a href="{{ '/categories/' | relative_url }}"{% if page.url contains '/categories/' %} aria-current="page"{% endif %}><span aria-hidden="true">▦</span> 文章分类</a>
         <a href="{{ '/archives/' | relative_url }}"{% if page.url == '/archives/' %} aria-current="page"{% endif %}><span aria-hidden="true">≡</span> 全部文章</a>
         <a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% endif %}><span aria-hidden="true">○</span> 关于华扇</a>
       </nav>

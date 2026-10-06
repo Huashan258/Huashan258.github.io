@@ -1,0 +1,30 @@
+# 分类名称须与文章的 categories 一致。
+# image 留空时保持文字卡片；填写本地图片路径后显示封面。
+# 例如胶粘剂封面：image: "/assets/images/covers/adhesives.webp"
+# 可选 description 用于介绍分类；新分类即使未写在这里也会自动生成。
+
+木材干燥学:
+  image: ""
+家具设计与开发:
+  image: ""
+胶粘剂:
+  image: "/assets/images/covers/jiaonianji.png"
+  description: "从胶粘剂基础到木材工业中的应用。"
+液压与气压传动:
+  image: ""
+气力输送与厂内运输:
+  image: ""
+B站弹幕姬:
+  image: ""
+数据分析:
+  image: ""
+字体参数:
+  image: ""
+崩坏：星穹铁道:
+  image: ""
+食物:
+  image: ""
+非物质文化遗产:
+  image: ""
+Acrania(band):
+  image: ""

@@ -1,0 +1,24 @@
+---
+layout: default
+---
+{% assign category = page.category_info %}
+<nav class="breadcrumbs" aria-label="当前位置"><a href="{{ '/' | relative_url }}">首页</a><span aria-hidden="true">/</span><a href="{{ '/categories/' | relative_url }}">文章分类</a><span aria-hidden="true">/</span><span aria-current="page">{{ category.name | escape }}</span></nav>
+<header class="page-heading category-heading">
+  <p class="eyebrow">{{ category.group_name | escape }}</p>
+  <h1>{{ category.name | escape }}</h1>
+  {% if category.description != '' %}<p>{{ category.description | escape }}</p>{% endif %}
+  <p class="category-order">共 {{ category.count }} 篇 · 按发表时间从早到晚排列</p>
+</header>
+<ol class="category-post-list" aria-label="{{ category.name | escape }}全部文章，按时间从早到晚排列">
+  {% for post in page.category_posts %}
+  <li>
+    <span class="category-article-number" aria-hidden="true">{{ forloop.index }}</span>
+    <div class="category-article">
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y-%m-%d' }}</time>
+      <h2><a class="category-article-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+      <p>{{ post.description | default: post.excerpt | strip_html | normalize_whitespace | truncate: 90 | escape }}</p>
+    </div>
+  </li>
+  {% endfor %}
+</ol>
+<p class="article-return"><a href="{{ '/categories/' | relative_url }}#category-{{ category.name | slugify: 'raw' | uri_escape }}">← 返回文章分类</a><a href="#top">回到顶部 ↑</a></p>

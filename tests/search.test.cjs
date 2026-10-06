@@ -15,6 +15,7 @@ test('every listed post enters the generated index, including new posts', () => 
   assert(!titles('test1').includes('test1'));
   assert.equal(titles('小炒秋葵')[0], '小炒秋葵');
   assert.equal(titles('蒜蓉生菜')[0], '蒜蓉生菜');
+  assert.equal(titles('酸菜鱼')[0], '酸菜鱼');
 });
 test('Chinese full titles rank first and short Chinese words work', () => {
   assert.equal(titles('木材与水分')[0], '木材与水分');

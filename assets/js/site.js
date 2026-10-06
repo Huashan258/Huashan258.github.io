@@ -1,5 +1,13 @@
 (function () {
   'use strict';
+  document.querySelectorAll('img[data-fallback-image]').forEach(function (image) {
+    function useDefault() {
+      var cover = image.closest('[data-optional-cover]');
+      (cover || image).hidden = true;
+    }
+    image.addEventListener('error', useDefault);
+    if (image.complete && image.naturalWidth === 0) useDefault();
+  });
   var menu = document.querySelector('.menu-toggle');
   var sidebar = document.getElementById('site-navigation');
   function closeMenu() {

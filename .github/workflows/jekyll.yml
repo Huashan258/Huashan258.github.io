@@ -39,6 +39,7 @@ jobs:
           python-version: '3.12'
       - name: Verify search, formulas and generated pages
         run: |
+          bundle exec ruby tests/categories.test.rb
           node --test tests/*.test.cjs
           python scripts/verify_site.py
       - name: Upload Pages artifact
