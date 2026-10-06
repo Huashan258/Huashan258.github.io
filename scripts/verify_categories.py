@@ -70,8 +70,8 @@ def verify(site):
             errors.append(f"Category detail has missing, extra or duplicate articles: {name}")
         if len(page.dates) != len(page.articles) or page.dates != sorted(page.dates):
             errors.append(f"Category articles must be oldest first: {name}")
-        if name == "胶粘剂" and (not page.article_titles or page.article_titles[0] != "胶粘剂概论"):
-            errors.append("胶粘剂概论 must be the first article in 胶粘剂")
+        if name == "胶黏剂" and (not page.article_titles or page.article_titles[0] != "胶黏剂概论"):
+            errors.append("胶黏剂概论 must be the first article in 胶黏剂")
     if seen != set(expected):
         errors.append("Category detail names do not match visible article categories")
     return errors, len(seen)

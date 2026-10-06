@@ -1,11 +1,11 @@
 - id: study
   name: 专业笔记
   symbol: 木
-  description: 木材、家具、胶粘剂与工程课程。
+  description: 木材、家具、胶黏剂与工程课程。
   categories:
     - 木材干燥学
     - 家具设计与开发
-    - 胶粘剂
+    - 胶黏剂
     - 液压与气压传动
     - 气力输送与厂内运输
 - id: tools
