@@ -4,27 +4,38 @@
 # 可选 description 用于介绍分类；新分类即使未写在这里也会自动生成。
 
 木材干燥学:
-  image: ""
+  image: "/assets/images/covers/mcgz.png"
+  description: "这个东西的坑真的填的完吗？。"
 家具设计与开发:
-  image: ""
-胶粘剂:
+  image: "/assets/images/covers/jiaju.png"
+  description: "这个东西的坑真的填的完吗？。"
+胶黏剂:
   image: "/assets/images/covers/jiaonianji.png"
-  description: "从胶粘剂基础到木材工业中的应用。"
+  description: "从胶黏剂基础到木材工业中的应用。"
 液压与气压传动:
-  image: ""
+  image: "/assets/images/covers/yeya.png"
+  description: "这个东西的坑真的填的完吗？。"
 气力输送与厂内运输:
-  image: ""
+  image: "/assets/images/covers/qili.png"
+  description: "这个东西的坑真的填的完吗？。"
 B站弹幕姬:
-  image: ""
+  image: "/assets/images/covers/damu.png"
+  description: "华扇为了玩明日方舟的作品之一。"
 数据分析:
-  image: ""
+  image: "/assets/images/covers/sjfx.png"
+  description: "还有谁要分析。"
 字体参数:
   image: ""
+  description: "这是什么？忘了吧。"
 崩坏：星穹铁道:
-  image: ""
+  image: "/assets/images/covers/starrail.png"
+  description: "垃圾游戏。"
 食物:
-  image: ""
+  image: "/assets/images/covers/food.png"
+  description: "华扇用于备忘的美食制作方式。"
 非物质文化遗产:
-  image: ""
+  image: "/assets/images/covers/fy.png"
+  description: "华扇的各种见闻。"
 Acrania(band):
   image: ""
+  description: "无所谓，忘了吧。"
