@@ -1,0 +1,38 @@
+---
+layout: default
+---
+{% assign visible_posts = site.posts | where_exp: "post", "post.listed != false" %}
+<section class="home-hero">
+  <p class="eyebrow">HUASHAN · DIGITAL GARDEN</p>
+  <h1>欢迎来到华扇的小家</h1>
+  <p class="hero-lead">记录学习，也收藏生活。</p>
+  <div class="hero-description">{{ content }}</div>
+  <div class="hero-actions">
+    <a class="button-primary" href="{{ '/categories/' | relative_url }}">浏览文章分类 <span aria-hidden="true">↗</span></a>
+    <a class="button-text" href="{{ '/about/' | relative_url }}">认识华扇 →</a>
+  </div>
+  <p class="hero-note">{{ visible_posts.size }} 篇记录，慢慢更新。</p>
+</section>
+<section class="home-topics" aria-labelledby="topics-heading">
+  <div class="section-heading"><h2 id="topics-heading">从这里开始</h2><span>按兴趣，找到下一篇</span></div>
+  <div class="topic-grid">
+    {% for group in site.data.topics %}
+      {% assign count = 0 %}
+      {% for post in visible_posts %}
+        {% assign first_category = post.categories | first %}
+        {% if group.categories contains first_category %}{% assign count = count | plus: 1 %}{% endif %}
+      {% endfor %}
+      <a class="topic-card topic-{{ group.id }}" href="{{ '/categories/' | relative_url }}#{{ group.id }}">
+        <span class="topic-symbol" aria-hidden="true">{{ group.symbol | escape }}</span>
+        <span class="topic-count">{{ count }} 篇</span>
+        <h3>{{ group.name }}</h3>
+        <p>{{ group.description }}</p>
+        <span class="topic-arrow" aria-hidden="true">↗</span>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+<section class="recent-posts" aria-labelledby="recent-heading">
+  <div class="section-heading"><h2 id="recent-heading">最近更新</h2><a href="{{ '/archives/' | relative_url }}">全部文章 →</a></div>
+  <div class="article-list">{% for post in visible_posts limit: 8 %}{% include post_card.html post=post %}{% endfor %}</div>
+</section>

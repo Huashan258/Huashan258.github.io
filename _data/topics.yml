@@ -1,0 +1,32 @@
+- id: study
+  name: 专业笔记
+  symbol: 木
+  description: 木材、家具、胶粘剂与工程课程。
+  categories:
+    - 木材干燥学
+    - 家具设计与开发
+    - 胶粘剂
+    - 液压与气压传动
+    - 气力输送与厂内运输
+- id: tools
+  name: 技术实践
+  symbol: "</>"
+  description: 编程、数据分析与工具使用。
+  categories:
+    - B站弹幕姬
+    - 数据分析
+    - 字体参数
+- id: games
+  name: 游戏分析
+  symbol: ◇
+  description: 游戏机制与自己的思考。
+  categories:
+    - 崩坏：星穹铁道
+- id: life
+  name: 生活与文化
+  symbol: 茶
+  description: 食物、音乐与文化见闻。
+  categories:
+    - 食物
+    - 非物质文化遗产
+    - Acrania(band)

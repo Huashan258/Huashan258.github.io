@@ -1,0 +1,6 @@
+{% assign post = include.post %}
+<article class="article-card">
+  <div class="article-card-meta"><span>{{ post.categories | first }}</span><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time></div>
+  <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+  <p>{{ post.description | default: post.excerpt | strip_html | normalize_whitespace | truncate: 90 }}</p>
+</article>

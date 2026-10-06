@@ -1,0 +1,47 @@
+title: 华扇
+tagline: 学习笔记与生活记录
+description: 木材科学与工程学习笔记、技术实践、游戏分析与生活见闻。
+url: "https://huashan258.github.io"
+baseurl: ""
+lang: zh-CN
+locale: zh_CN
+timezone: Asia/Shanghai
+author: 华扇独臂成仙
+email: 1095832103@qq.com
+github_username: Huashan258
+bilibili_url: https://space.bilibili.com/29663423
+
+theme: just-the-docs
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  math_engine: null
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/background.webp
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      listed: true
+feed:
+  posts_limit: 20
+exclude:
+  - README.md
+  - 发布说明.md
+  - CHANGELOG.md
+  - tests
+  - scripts
+  - vendor
+  - baseline-urls.json
+  - .bundle
+  - node_modules

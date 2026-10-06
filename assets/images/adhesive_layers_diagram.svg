@@ -1,0 +1,37 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- 被粘材料 (深蓝色) -->
+  <rect x="50" y="50" width="300" height="60" fill="#0047AB" />
+  <text x="200" y="85" font-size="20" fill="white" text-anchor="middle" dominant-baseline="middle">被粘材料</text>
+  
+  <!-- 被粘材料表面层 (浅蓝色) -->
+  <rect x="50" y="110" width="300" height="50" fill="#87CEEB" />
+  <text x="200" y="135" font-size="18" fill="white" text-anchor="middle" dominant-baseline="middle">被粘材料表面层</text>
+  
+  <!-- 胶粘剂与被粘材料的界面层 (非常浅蓝色) -->
+  <rect x="50" y="160" width="300" height="50" fill="#E6F3FF" />
+  <text x="200" y="185" font-size="16" fill="#333333" text-anchor="middle" dominant-baseline="middle">胶粘剂与被粘材料的界面层</text>
+  
+  <!-- 受界面影响的胶粘剂层 (浅橙色) -->
+  <rect x="50" y="210" width="300" height="50" fill="#FFE4C4" />
+  <text x="200" y="235" font-size="16" fill="#333333" text-anchor="middle" dominant-baseline="middle">受界面影响的胶粘剂层</text>
+  
+  <!-- 胶粘剂层 (红色) -->
+  <rect x="50" y="260" width="300" height="50" fill="#FF6347" />
+  <text x="200" y="285" font-size="18" fill="white" text-anchor="middle" dominant-baseline="middle">胶粘剂层</text>
+  
+  <!-- 受界面影响的胶粘剂层 (浅橙色) -->
+  <rect x="50" y="310" width="300" height="50" fill="#FFE4C4" />
+  <text x="200" y="335" font-size="16" fill="#333333" text-anchor="middle" dominant-baseline="middle">受界面影响的胶粘剂层</text>
+  
+  <!-- 胶粘剂与被粘材料的界面层 (非常浅蓝色) -->
+  <rect x="50" y="360" width="300" height="50" fill="#E6F3FF" />
+  <text x="200" y="385" font-size="16" fill="#333333" text-anchor="middle" dominant-baseline="middle">胶粘剂与被粘材料的界面层</text>
+  
+  <!-- 被粘材料表面层 (浅蓝色) -->
+  <rect x="50" y="410" width="300" height="50" fill="#87CEEB" />
+  <text x="200" y="435" font-size="18" fill="white" text-anchor="middle" dominant-baseline="middle">被粘材料表面层</text>
+  
+  <!-- 被粘材料 (深蓝色) -->
+  <rect x="50" y="460" width="300" height="60" fill="#0047AB" />
+  <text x="200" y="495" font-size="20" fill="white" text-anchor="middle" dominant-baseline="middle">被粘材料</text>
+</svg>

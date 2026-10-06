@@ -1,0 +1,31 @@
+---
+layout: default
+---
+{% assign category = page.categories | first %}
+<nav class="breadcrumbs" aria-label="当前位置"><a href="{{ '/' | relative_url }}">首页</a><span aria-hidden="true">/</span>{% if page.listed == false %}<a href="{{ '/archives/' | relative_url }}">全部文章</a>{% else %}<a href="{{ '/categories/' | relative_url }}#category-{{ category | slugify: 'raw' | uri_escape }}">{{ category }}</a>{% endif %}<span aria-hidden="true">/</span><span>正文</span></nav>
+<article>
+  <header class="article-heading">
+    <p class="eyebrow">{{ category }}</p>
+    <h1>{{ page.title }}</h1>
+    <p class="article-meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time><span aria-hidden="true"> · </span><span>{{ site.author }}</span><span aria-hidden="true"> · </span><span>约 {{ page.reading_minutes | default: 1 }} 分钟</span></p>
+    {% if page.last_modified_at %}<p class="article-meta">更新于 <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{{ page.last_modified_at | date: "%Y-%m-%d" }}</time></p>{% endif %}
+  </header>
+  <details class="article-toc" open hidden><summary>文章目录</summary><nav aria-label="文章目录"><ol id="article-toc-list"></ol></nav></details>
+  <div class="article-body">{{ content }}</div>
+  {% assign series = site.posts | where_exp: "post", "post.listed != false" | where_exp: "post", "post.categories contains category" | sort: "date" %}
+  {% assign previous_article = nil %}
+  {% assign next_article = nil %}
+  {% assign found_current = false %}
+  {% for post in series %}
+    {% if found_current %}{% assign next_article = post %}{% break %}{% endif %}
+    {% if post.url == page.url %}{% assign found_current = true %}{% else %}{% assign previous_article = post %}{% endif %}
+  {% endfor %}
+  {% if page.listed != false and series.size > 1 %}
+    <nav class="article-pagination" aria-label="同系列文章">
+      {% if previous_article %}<a href="{{ previous_article.url | relative_url }}"><span>← 同分类上一篇</span><strong>{{ previous_article.title }}</strong></a>{% else %}<div></div>{% endif %}
+      {% if next_article %}<a href="{{ next_article.url | relative_url }}"><span>同分类下一篇 →</span><strong>{{ next_article.title }}</strong></a>{% endif %}
+    </nav>
+    <details class="series-list"><summary>{{ category }} · 系列索引（{{ series.size }} 篇）</summary><ol>{% for post in series %}<li>{% if post.url == page.url %}<span aria-current="page">{{ post.title }}</span>{% else %}<a href="{{ post.url | relative_url }}">{{ post.title }}</a>{% endif %}</li>{% endfor %}</ol></details>
+  {% endif %}
+  <p class="article-return">{% if page.listed == false %}<a href="{{ '/archives/' | relative_url }}">← 返回全部文章</a>{% else %}<a href="{{ '/categories/' | relative_url }}#category-{{ category | slugify: 'raw' | uri_escape }}">← 返回 {{ category }}</a>{% endif %}<a href="#top">回到顶部 ↑</a></p>
+</article>

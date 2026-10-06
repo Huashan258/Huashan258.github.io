@@ -1,0 +1,43 @@
+---
+layout: page
+title: 文章分类
+description: 按主题浏览专业笔记、技术实践、游戏分析与生活文化记录。
+permalink: /categories/
+---
+{% assign visible_posts = site.posts | where_exp: "post", "post.listed != false" %}
+{% assign known_categories = "" | split: "," %}
+{% for group in site.data.topics %}{% assign known_categories = known_categories | concat: group.categories %}{% endfor %}
+<nav class="category-shortcuts" aria-label="分区快捷跳转">{% for group in site.data.topics %}<a href="#{{ group.id }}">{{ group.name }}</a>{% endfor %}</nav>
+{% for group in site.data.topics %}
+  <section class="category-group" id="{{ group.id }}">
+    <div class="section-heading"><h2>{{ group.name }}</h2><span>{{ group.description }}</span></div>
+    {% for name in group.categories %}
+      {% assign posts = visible_posts | where_exp: "post", "post.categories contains name" %}
+      {% if posts.size > 0 %}
+        <section class="category-block" id="category-{{ name | slugify: 'raw' }}">
+          <h3>{{ name }} <span class="count-badge">{{ posts.size }} 篇</span></h3>
+          <ul class="compact-post-list">{% for post in posts %}<li><a href="{{ post.url | relative_url }}">{{ post.title }}</a><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time></li>{% endfor %}</ul>
+        </section>
+      {% endif %}
+    {% endfor %}
+  </section>
+{% endfor %}
+{% assign other_count = 0 %}
+{% for post in visible_posts %}{% assign name = post.categories | first %}{% unless known_categories contains name %}{% assign other_count = other_count | plus: 1 %}{% endunless %}{% endfor %}
+{% if other_count > 0 %}
+<section class="category-group" id="other">
+  <div class="section-heading"><h2>其他记录</h2><span>新主题也会自动出现在这里</span></div>
+  {% for entry in site.categories %}
+    {% assign name = entry | first %}
+    {% unless known_categories contains name %}
+      {% assign posts = visible_posts | where_exp: "post", "post.categories contains name" %}
+      {% if posts.size > 0 %}
+      <section class="category-block" id="category-{{ name | slugify: 'raw' }}">
+        <h3>{{ name }} <span class="count-badge">{{ posts.size }} 篇</span></h3>
+        <ul class="compact-post-list">{% for post in posts %}<li><a href="{{ post.url | relative_url }}">{{ post.title }}</a><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time></li>{% endfor %}</ul>
+      </section>
+      {% endif %}
+    {% endunless %}
+  {% endfor %}
+</section>
+{% endif %}

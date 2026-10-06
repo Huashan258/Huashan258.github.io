@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'zh-CN' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#6b4f91">
+  {% seo %}
+  {% feed_meta %}
+  <link rel="icon" href="{{ '/assets/images/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+  {% include head_custom.html %}
+  <script src="{{ '/assets/js/search-engine.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+</head>
+<body class="site-page{% if page.layout == 'post' %} post-page{% endif %}">
+  <span id="top" class="page-top" aria-hidden="true"></span>
+  <a class="skip-link" href="#main-content">跳到正文</a>
+  <div class="site-shell">
+    <aside class="site-sidebar" id="site-navigation" aria-label="主导航">
+      <a class="site-brand" href="{{ '/' | relative_url }}" aria-label="华扇首页">
+        <span class="brand-mark" aria-hidden="true">扇</span>
+        <span><strong>华扇</strong><small>学习笔记与生活记录</small></span>
+      </a>
+      <p class="sidebar-intro">在这个安静的角落，<br>记录学习，也收藏生活。</p>
+      <nav aria-label="页面导航">
+        <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}><span aria-hidden="true">⌂</span> 首页</a>
+        <a href="{{ '/categories/' | relative_url }}"{% if page.url == '/categories/' %} aria-current="page"{% endif %}><span aria-hidden="true">▦</span> 文章分类</a>
+        <a href="{{ '/archives/' | relative_url }}"{% if page.url == '/archives/' %} aria-current="page"{% endif %}><span aria-hidden="true">≡</span> 全部文章</a>
+        <a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% endif %}><span aria-hidden="true">○</span> 关于华扇</a>
+      </nav>
+      <div class="sidebar-topics">
+        <p class="eyebrow">内容分区</p>
+        {% for group in site.data.topics %}
+          <a href="{{ '/categories/' | relative_url }}#{{ group.id }}">{{ group.name }}<span aria-hidden="true">↗</span></a>
+        {% endfor %}
+      </div>
+      <div class="sidebar-bottom">
+        <a href="{{ '/feed.xml' | relative_url }}">RSS 订阅</a>
+        <p>博士，欢迎回家。</p>
+      </div>
+    </aside>
+    <div class="site-main">
+      <header class="site-header">
+        <button class="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false" aria-label="展开导航">☰</button>
+        <div class="site-search" role="search" data-index-url="{{ '/assets/search.json' | relative_url }}">
+          <label class="sr-only" for="search-input">搜索文章</label>
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input type="search" id="search-input" placeholder="搜索文章、关键词…" autocomplete="off" aria-controls="search-results">
+          <kbd class="search-shortcut" aria-hidden="true">/</kbd>
+          <div class="search-results" id="search-results" aria-label="搜索结果" hidden>
+            <p id="search-status" role="status" aria-live="polite"></p>
+            <ul id="search-list"></ul>
+          </div>
+        </div>
+        <nav class="social-links" aria-label="外部链接">
+          <a href="https://github.com/Huashan258" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          <a href="{{ site.bilibili_url }}" target="_blank" rel="noopener noreferrer">哔哩哔哩 <span aria-hidden="true">↗</span></a>
+        </nav>
+      </header>
+      <main id="main-content" class="main-content" tabindex="-1">{{ content }}</main>
+      <footer class="site-footer">
+        <p>© {{ site.time | date: '%Y' }} 华扇 · 记录学习，收藏生活。</p>
+        <div><a href="{{ '/feed.xml' | relative_url }}">RSS</a><span aria-hidden="true"> · </span><a href="#top">回到顶部 ↑</a></div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

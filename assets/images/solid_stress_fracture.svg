@@ -1,0 +1,62 @@
+<svg viewBox="0 0 800 250" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景线 -->
+  <line x1="0" y1="200" x2="800" y2="200" stroke="#8FD400" stroke-width="3"/>
+  
+  <!-- 第一个正方体（完整固体） -->
+  <g transform="translate(100, 100)">
+    <!-- 顶面 -->
+    <polygon points="0,0 100,0 135,35 35,35" fill="#B8E2E6" stroke="#78B4BB" stroke-width="1.5"/>
+    <!-- 前面 -->
+    <polygon points="0,0 0,100 100,100 100,0" fill="#B8E2E6" stroke="#78B4BB" stroke-width="1.5"/>
+    <!-- 侧面 -->
+    <polygon points="100,0 100,100 135,135 135,35" fill="#A1CED3" stroke="#78B4BB" stroke-width="1.5"/>
+    
+    <!-- 表面纹路（细线） -->
+    <path d="M20,20 C30,10 40,20 50,15" fill="none" stroke="#666" stroke-width="1"/>
+    <path d="M70,10 C90,5 80,20 90,15" fill="none" stroke="#666" stroke-width="1"/>
+    <path d="M110,50 C115,60 120,55 125,65" fill="none" stroke="#666" stroke-width="1"/>
+    
+    <!-- "固体"文字 -->
+    <text x="50" y="60" font-size="30" fill="#FF0000" text-anchor="middle" font-weight="bold">固体</text>
+  </g>
+  
+  <!-- 第一个箭头 -->
+  <g transform="translate(240, 100)">
+    <polygon points="0,30 80,30 80,10 110,40 80,70 80,50 0,50" fill="#B8E2E6" stroke="#78B4BB" stroke-width="1.5"/>
+    
+    <!-- 箭头文字 -->
+    <text x="55" y="20" font-size="22" fill="#333" text-anchor="middle">内应力</text>
+    <text x="55" y="65" font-size="22" fill="#333" text-anchor="middle">外应力</text>
+  </g>
+  
+  <!-- 第二个正方体（有裂缝的固体） -->
+  <g transform="translate(380, 100)">
+    <!-- 顶面 -->
+    <polygon points="0,0 100,0 135,35 35,35" fill="#B8E2E6" stroke="#78B4BB" stroke-width="1.5"/>
+    <!-- 前面 -->
+    <polygon points="0,0 0,100 100,100 100,0" fill="#B8E2E6" stroke="#78B4BB" stroke-width="1.5"/>
+    <!-- 侧面 -->
+    <polygon points="100,0 100,100 135,135 135,35" fill="#A1CED3" stroke="#78B4BB" stroke-width="1.5"/>
+    
+    <!-- 裂缝（较粗的黑线） -->
+    <path d="M30,10 C40,20 60,15 70,25 C80,35 70,45 85,55 C95,65 80,75 90,85" fill="none" stroke="#333" stroke-width="2"/>
+    <path d="M105,25 C115,35 125,45 120,60 C115,80 125,100 125,100" fill="none" stroke="#333" stroke-width="2"/>
+    
+    <!-- "固体"文字 -->
+    <text x="50" y="60" font-size="30" fill="#FF0000" text-anchor="middle" font-weight="bold">固体</text>
+  </g>
+  
+  <!-- 第二个箭头 -->
+  <g transform="translate(520, 100)">
+    <polygon points="0,30 80,30 80,10 110,40 80,70 80,50 0,50" fill="#B8E2E6" stroke="#78B4BB" stroke-width="1.5"/>
+  </g>
+  
+  <!-- 第三个图形（破坏） -->
+  <g transform="translate(640, 100)">
+    <!-- 碎片 -->
+    <rect x="10" y="10" width="110" height="90" fill="#B8E2E6" stroke="#78B4BB" stroke-width="1.5" rx="2" ry="2"/>
+    
+    <!-- "破坏!"文字 -->
+    <text x="65" y="60" font-size="30" fill="#0047AB" text-anchor="middle" font-weight="bold">破坏!</text>
+  </g>
+</svg>

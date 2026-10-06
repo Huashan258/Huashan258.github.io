@@ -1,0 +1,12 @@
+---
+layout: page
+title: 全部文章
+description: 按时间查看华扇的全部正式文章，也可以使用顶部搜索查找关键词。
+permalink: /archives/
+---
+{% assign visible_posts = site.posts | where_exp: "post", "post.listed != false" %}
+<p class="archive-count">共 {{ visible_posts.size }} 篇记录。寻找具体主题时，可以使用顶部搜索。</p>
+{% assign years = visible_posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+{% for year in years %}
+<section class="archive-year"><h2>{{ year.name }} <span class="count-badge">{{ year.items.size }} 篇</span></h2><ul class="compact-post-list">{% for post in year.items %}<li><a href="{{ post.url | relative_url }}">{{ post.title }}</a><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%m-%d" }}</time></li>{% endfor %}</ul></section>
+{% endfor %}

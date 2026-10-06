@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300">
+  <!-- First reaction: R-H + R'NCO → R-C-NH-R' -->
+  <text x="80" y="50" font-family="Arial" font-size="18">R-H + R'NCO</text>
+  <line x1="190" y1="50" x2="270" y2="50" stroke="black" stroke-width="2"/>
+  <polygon points="270,50 260,45 260,55" fill="black"/>
+  <text x="290" y="50" font-family="Arial" font-size="18">R-C-NH-R'</text>
+  <text x="310" y="20" font-family="Arial" font-size="18">O</text>
+  <!-- Double bond between C and O -->
+  <line x1="315" y1="23" x2="315" y2="35" stroke="black" stroke-width="1.5"/>
+  <line x1="318" y1="23" x2="318" y2="35" stroke="black" stroke-width="1.5"/>
+  
+  <!-- Second reaction: R-H + R'-COOH → R-C-R' -->
+  <text x="80" y="130" font-family="Arial" font-size="18">R-H + R'-COOH</text>
+  <line x1="205" y1="130" x2="285" y2="130" stroke="black" stroke-width="2"/>
+  <polygon points="285,130 275,125 275,135" fill="black"/>
+  <text x="305" y="130" font-family="Arial" font-size="18">R-C-R'</text>
+  <text x="323" y="100" font-family="Arial" font-size="18">O</text>
+  <!-- Double bond between C and O -->
+  <line x1="329" y1="102" x2="329" y2="114" stroke="black" stroke-width="1.5"/>
+  <line x1="332" y1="102" x2="332" y2="114" stroke="black" stroke-width="1.5"/>
+  
+  <!-- Third reaction: R-H + R'-COCl → R-C-R' -->
+  <text x="80" y="210" font-family="Arial" font-size="18">R-H + R'-COCl</text>
+  <line x1="205" y1="210" x2="285" y2="210" stroke="black" stroke-width="2"/>
+  <polygon points="285,210 275,205 275,215" fill="black"/>
+  <text x="305" y="210" font-family="Arial" font-size="18">R-C-R'</text>
+  <text x="323" y="180" font-family="Arial" font-size="18">O</text>
+  <!-- Double bond between C and O -->
+  <line x1="329" y1="185" x2="329" y2="197" stroke="black" stroke-width="1.5"/>
+  <line x1="332" y1="185" x2="332" y2="197" stroke="black" stroke-width="1.5"/>
+</svg>

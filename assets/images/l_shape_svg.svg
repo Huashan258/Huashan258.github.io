@@ -1,0 +1,12 @@
+<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- 垂直长方体 -->
+  <rect x="40" y="30" width="20" height="150" fill="url(#grid)" stroke="black" stroke-width="1"/>
+  
+  
+  <!-- 水平长方体 -->
+  <rect x="40" y="180" width="210" height="20" fill="url(#grid)" stroke="black" stroke-width="1"/>
+  <rect x="40" y="180" width="210" height="20" fill="none" stroke="black" stroke-width="1"/>
+  
+  <!-- 连接处的纯黑色长方体 -->
+  <rect x="40" y="175" width="20" height="5" fill="black" stroke="black" stroke-width="1"/>
+</svg>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background dot pattern -->
+  <defs>
+    <pattern id="dotPattern" width="10" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="5" r="0.5" fill="#000" opacity="0.5"/>
+    </pattern>
+  </defs>
+
+  <!-- Background rectangle with dot pattern -->
+  <rect width="100%" height="100%" fill="url(#dotPattern)"/>
+  
+  <!-- Annotations at bottom -->
+  <rect x="50" y="175" width="15" height="15" fill="url(#dotPattern)" stroke="#000" stroke-width="1"/>
+  <text x="70" y="185" font-family="Arial" font-size="12" fill="#000">被胶接材料</text>
+  
+  <rect x="250" y="175" width="15" height="15" fill="#000"/>
+  <text x="270" y="185" font-family="Arial" font-size="12" fill="#000">固化后胶粘剂</text>
+  
+  <!-- Thin lines -->
+  <line x1="280" y1="10" x2="200" y2="150" stroke="#777" stroke-width="0.5"/>
+  <line x1="600" y1="25" x2="550" y2="175" stroke="#777" stroke-width="0.5"/>
+  <line x1="750" y1="40" x2="700" y2="130" stroke="#777" stroke-width="0.5"/>
+  
+  <!-- Main black silhouette/waveform - more irregular -->
+  <path d="M0,100 
+    C15,90 22,115 35,100
+    C45,115 55,85 70,105
+    C85,95 95,110 110,95
+    C125,90 140,105 152,102
+    C165,112 178,85 190,100
+    C200,85 215,110 230,98
+    C245,105 260,85 275,95
+    C290,105 305,90 320,108
+    C335,93 350,115 365,100
+    C378,88 395,98 410,105
+    C425,90 432,110 448,95
+    C465,100 480,85 495,105
+    C510,88 525,105 540,95
+    C560,110 575,85 590,98
+    C603,105 618,85 630,98
+    C642,108 655,92 670,105
+    C685,95 702,110 715,95
+    C730,105 745,88 760,100
+    C780,95 790,105 800,100
+    L800,120
+    C785,125 770,115 755,128
+    C740,120 725,130 710,125
+    C695,115 680,128 665,118
+    C650,128 635,115 620,125
+    C605,115 590,128 575,118
+    C560,125 545,115 530,125
+    C515,115 500,128 485,118
+    C470,125 455,115 440,125
+    C425,115 410,128 395,118
+    C380,125 365,115 350,125
+    C335,115 320,128 305,118
+    C290,125 275,115 260,125
+    C245,115 230,128 215,118
+    C200,125 185,115 170,125
+    C155,115 140,128 125,118
+    C110,125 95,115 80,125
+    C65,115 50,128 35,118
+    C20,125 5,115 0,120
+    L0,100 Z" 
+    fill="black"/>
+</svg>

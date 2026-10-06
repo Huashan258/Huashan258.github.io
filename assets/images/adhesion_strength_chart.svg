@@ -1,0 +1,105 @@
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Grid background -->
+  <defs>
+    <pattern id="smallGrid" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#e0e0e0" stroke-width="0.5"/>
+    </pattern>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <rect width="50" height="50" fill="url(#smallGrid)"/>
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#cccccc" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="500" height="500" fill="transparent" />
+  
+  <!-- Axes -->
+  <line x1="80" y1="50" x2="80" y2="400" stroke="black" stroke-width="2"/>
+  <line x1="80" y1="400" x2="430" y2="400" stroke="black" stroke-width="2"/>
+  
+  <!-- Y-axis ticks and labels -->
+  <line x1="75" y1="400" x2="85" y2="400" stroke="black" stroke-width="1"/>
+  <text x="65" y="405" font-size="12" text-anchor="end">0</text>
+  
+  <line x1="75" y1="350" x2="85" y2="350" stroke="black" stroke-width="1"/>
+  <text x="65" y="355" font-size="12" text-anchor="end">20</text>
+  
+  <line x1="75" y1="300" x2="85" y2="300" stroke="black" stroke-width="1"/>
+  <text x="65" y="305" font-size="12" text-anchor="end">40</text>
+  
+  <line x1="75" y1="250" x2="85" y2="250" stroke="black" stroke-width="1"/>
+  <text x="65" y="255" font-size="12" text-anchor="end">60</text>
+  
+  <line x1="75" y1="200" x2="85" y2="200" stroke="black" stroke-width="1"/>
+  <text x="65" y="205" font-size="12" text-anchor="end">80</text>
+  
+  <!-- X-axis ticks and labels -->
+  <line x1="150" y1="395" x2="150" y2="405" stroke="black" stroke-width="1"/>
+  <text x="150" y="425" font-size="12" text-anchor="middle">5</text>
+  
+  <line x1="300" y1="395" x2="300" y2="405" stroke="black" stroke-width="1"/>
+  <text x="300" y="425" font-size="12" text-anchor="middle">10</text>
+  
+  <!-- Data points -->
+  <!-- Group 1 (around x=5) -->
+  <circle cx="150" cy="380" r="4" fill="black"/>
+  <circle cx="150" cy="390" r="4" fill="black"/>
+  <circle cx="150" cy="385" r="4" fill="black"/>
+  <circle cx="150" cy="375" r="4" fill="black"/>
+  <circle cx="160" cy="383" r="1" fill="black"/>
+  <circle cx="160" cy="387" r="1" fill="black"/>
+  <circle cx="160" cy="391" r="1" fill="black"/>
+  
+  <!-- Group 2 (around x=7) -->
+  <circle cx="220" cy="350" r="4" fill="black"/>
+  <circle cx="220" cy="365" r="4" fill="black"/>
+  <circle cx="220" cy="370" r="4" fill="black"/>
+  <circle cx="220" cy="375" r="4" fill="black"/>
+  <circle cx="230" cy="360" r="1" fill="black"/>
+  <circle cx="230" cy="365" r="1" fill="black"/>
+  <circle cx="230" cy="370" r="1" fill="black"/>
+  
+  <!-- Group 3 (around x=9) -->
+  <circle cx="270" cy="300" r="4" fill="black"/>
+  <circle cx="270" cy="320" r="4" fill="black"/>
+  <circle cx="270" cy="340" r="4" fill="black"/>
+  <circle cx="270" cy="330" r="4" fill="black"/>
+  <circle cx="280" cy="310" r="1" fill="black"/>
+  <circle cx="280" cy="320" r="1" fill="black"/>
+  <circle cx="280" cy="330" r="1" fill="black"/>
+  
+  <!-- Group 4 (around x=10) -->
+  <circle cx="300" cy="230" r="4" fill="black"/>
+  <circle cx="300" cy="260" r="4" fill="black"/>
+  <circle cx="300" cy="270" r="4" fill="black"/>
+  <circle cx="300" cy="280" r="4" fill="black"/>
+  <circle cx="310" cy="240" r="1" fill="black"/>
+  <circle cx="310" cy="250" r="1" fill="black"/>
+  <circle cx="310" cy="260" r="1" fill="black"/>
+  
+  <!-- Group 5 (around x=11) -->
+  <circle cx="330" cy="200" r="4" fill="black"/>
+  <circle cx="330" cy="250" r="4" fill="black"/>
+  <circle cx="330" cy="265" r="4" fill="black"/>
+  <circle cx="340" cy="210" r="1" fill="black"/>
+  <circle cx="340" cy="230" r="1" fill="black"/>
+  <circle cx="340" cy="250" r="1" fill="black"/>
+  
+  <!-- Y-axis label (vertical text) -->
+  <text x="30" y="220" font-size="14" text-anchor="middle" transform="rotate(-90, 30, 220)">拉伸胶接强度 (kgf/cm²)</text>
+  
+  <!-- X-axis label -->
+  <text x="250" y="460" font-size="14" text-anchor="middle">
+    <tspan baseline-shift="-15%" font-size="12">(1/η)</tspan>
+    <tspan baseline-shift="5%" font-size="10">1/2</tspan>
+    <tspan> (10</tspan>
+    <tspan baseline-shift="30%" font-size="10">-4</tspan>
+    <tspan>/p)</tspan>
+    <tspan baseline-shift="5%" font-size="10">1/2</tspan>
+  </text>
+  
+  <!-- Title at bottom -->
+  <text x="250" y="490" font-size="16" text-anchor="middle">
+    <tspan baseline-shift="-15%" font-size="14">(1/η)</tspan>
+    <tspan baseline-shift="5%" font-size="12">1/2</tspan>
+    <tspan> 与拉伸胶接强度的关系</tspan>
+  </text>
+</svg>

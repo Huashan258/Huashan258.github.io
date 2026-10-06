@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100">
+  <!-- 第一条线 (顶部) -->
+  <line x1="20" y1="25" x2="280" y2="25" stroke="#000000" stroke-width="1.5"/>
+  
+  <!-- 第二条线 (中间) - 稍微粗一些 -->
+  <line x1="20" y1="50" x2="280" y2="50" stroke="#000000" stroke-width="2.5"/>
+  
+  <!-- 第三条线 (底部) -->
+  <line x1="20" y1="75" x2="280" y2="75" stroke="#000000" stroke-width="1.5"/>
+</svg>

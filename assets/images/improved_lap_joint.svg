@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150">
+ 
+ 
+  <rect width="300" height="150" fill="url(#grid)"/>
+  
+  <!-- 左侧长方体 -->
+  <rect x="50" y="90" width="130" height="20" stroke="black" stroke-width="2" fill="url(#grid)"/>
+  
+  <!-- 中间黑色连接长方体 -->
+  <rect x="150" y="80" width="30" height="10" fill="black"/>
+  
+  <!-- 右侧长方体 -->
+  <rect x="150" y="60" width="130" height="20" stroke="black" stroke-width="2" fill="url(#grid)"/>
+</svg>
